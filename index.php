@@ -1,7 +1,7 @@
 <?php include 'database.php';?>
 <?php
 // create select query
-$query = "SELECT * FROM yaks";
+$query = "SELECT * FROM yaks ORDER by id DESC";
 $yaks = mysqli_query($con, $query);
 ?>
 <!DOCTYPE html>
@@ -26,11 +26,14 @@ $yaks = mysqli_query($con, $query);
             </ul>
         </div>
         <div id="input">
+            <?php if(isset($_GET['error'])) : ?>
+                <div class="error"><?php echo $_GET['error']; ?></div>
+            <?php endif; ?>
             <form method="post" action="process.php">
-            <input type="text" name="user" placeholder="enter your name">
-            <input type="text" name="message" placeholder="type your message">
-            <br>
-            <input type="submit" name="submit" value="yakbak" class="button">
+                <input type="text" name="user" placeholder="enter your name">
+                <input type="text" name="message" placeholder="type your message">
+                <br>
+                <input class="button" type="submit" name="submit" value="yakbak">
             </form>
         </div>
     </div>

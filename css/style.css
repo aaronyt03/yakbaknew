@@ -6,9 +6,9 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     font-size: 15;
-    color: darkred;
+    color: darkslategray;
     line-height: 1.5m;
-    background: lightblue;
+    background: black;
 }
 
 #container{
@@ -23,13 +23,15 @@ header h1{
     color: lightgreen;
     font-size: 22px;
     padding: 15px 0 10px 10px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid black;
+    text-align: center;
+
 
 }
 
 #yaks{
     width: 90%;
-    background: lightgray;
+    background: white;
     height: 400px;
     margin: 20px auto;
     overflow: auto;
@@ -42,7 +44,7 @@ header h1{
 }
 
 .yak span{
-    color: darkolivegreen;
+    color: red;
 }
 
 #input{

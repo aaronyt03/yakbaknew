@@ -1,3 +1,9 @@
+<?php include 'database.php';?>
+<?php
+// create select query
+$query = "SELECT * FROM yaks";
+$yaks = mysqli_query($con, $query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +20,9 @@
         </header>
         <div id="yaks">
             <ul>
-                <li class="yak"><span>5:30PM - </span>Aaron : Hey there!</li>
-                <li class="yak"><span>5:30PM - </span>Aaron : Hey there!</li>
-                <li class="yak"><span>5:30PM - </span>Aaron : Hey there!</li>
-                <li class="yak"><span>5:30PM - </span>Aaron : Hey there!</li>
-                <li class="yak"><span>5:30PM - </span>Aaron : Hey there!</li>
+                <?php while($row = mysqli_fetch_assoc($yaks)) : ?>
+                    <li class="yak"><span><?php echo $row['time'] ?> - </span><strong><?php echo $row['user'] ?></strong> : <?php echo $row['message'] ?></li>
+                <?php endwhile ?>  
             </ul>
         </div>
         <div id="input">
